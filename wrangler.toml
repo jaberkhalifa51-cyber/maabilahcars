@@ -1,0 +1,14 @@
+name = "maabilahcars-landing"
+type = "javascript"
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+[build]
+cwd = "."
+command = ""
+watch_paths = []
+
+[build.upload]
+format = "modules"
+main = "./index.html"
