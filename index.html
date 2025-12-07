@@ -1,451 +1,279 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maabilah Cars - أفضل عروض السيارات المستعملة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Maabilah Cars | Premium Used Cars in Muscat | سيارات المعبيلة</title>
+    <meta name="description" content="Find the best used cars in Al Maabilah, Muscat. Gulf specs and imports with warranty. أفضل عروض السيارات المستعملة في المعبيلة، مسقط.">
+    <meta name="keywords" content="Maabilah cars, used cars Oman, cars for sale Muscat, Toyota Oman, Lexus import, سيارات للبيع مسقط, سيارات المعبيلة, سوق المعبيلة">
+    <meta name="author" content="Maabilah Cars">
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maabilahcars.com/">
+    <meta property="og:title" content="Maabilah Cars - Premium Deals">
+    <meta property="og:description" content="Certified used cars in Al Maabilah Industrial Area. Quality you can trust.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <!-- Tailwind CSS (Via CDN for easy deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Inter for English, Cairo for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-arabic { font-family: 'Cairo', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 
-    :root {
-      --primary: #1a4d7a;
-      --accent: #e74c3c;
-      --bg-light: #f8f9fa;
+    <!-- Schema.org Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "Maabilah Cars",
+      "image": "https://maabilahcars.com/logo.png",
+      "url": "https://maabilahcars.com",
+      "telephone": "+96890000000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Al Maabilah Industrial Area",
+        "addressLocality": "Seeb",
+        "addressRegion": "Muscat",
+        "addressCountry": "OM"
+      },
+      "priceRange": "$$"
     }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Tajawal', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-light);
-      color: #2c3e50;
-    }
-
-    header {
-      background: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, var(--primary), #2d6ba6);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .btn {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #ec7063;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
-    }
-
-    .hero {
-      padding: 3rem 0;
-      background: white;
-      text-align: center;
-    }
-
-    .hero-image {
-      max-width: 95%;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      margin-bottom: 2rem;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      color: #7f8c8d;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .section-subtitle {
-      font-size: 1.1rem;
-      color: #7f8c8d;
-      margin-bottom: 2.5rem;
-    }
-
-    .listings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .car-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s;
-      border: 2px solid transparent;
-    }
-
-    .car-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      border-color: var(--primary);
-    }
-
-    .car-image {
-      height: 220px;
-      background: linear-gradient(135deg, #3498db, #2980b9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      position: relative;
-    }
-
-    .car-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--accent);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .car-info {
-      padding: 1.5rem;
-    }
-
-    .car-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: var(--primary);
-    }
-
-    .car-price {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .car-specs {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-
-    .car-spec {
-      background: var(--bg-light);
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      color: #7f8c8d;
-    }
-
-    .car-actions {
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    .car-actions button {
-      flex: 1;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .btn-call {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-call:hover {
-      background: #2d6ba6;
-    }
-
-    .btn-whatsapp {
-      background: var(--bg-light);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-    }
-
-    .btn-whatsapp:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    .features {
-      background: white;
-      padding: 4rem 2rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-title {
-      font-size: 1.3rem;
-      margin-bottom: 0.75rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .feature-text {
-      color: #7f8c8d;
-      line-height: 1.6;
-    }
-
-    .footer {
-      background: var(--primary);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 4rem;
-    }
-
-    @media(max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .nav-links {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+    </script>
 </head>
+<body class="bg-gray-50 text-gray-800">
 
-<body>
-  <header>
-    <div class="navbar">
-      <div class="logo">
-        <div class="logo-icon">MC</div>
-        <span>Maabilah Cars</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#listings">السيارات</a>
-        <a href="#features">لماذا نحن</a>
-        <a href="#contact">تواصل</a>
-      </nav>
-      <button class="btn btn-primary">واتساب</button>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-900">Maabilah<span class="text-blue-600">Cars</span></span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-8" id="nav-links">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium" data-key="nav_home">Home</a>
+                        <a href="#listings" class="text-gray-700 hover:text-blue-600 font-medium" data-key="nav_cars">Cars</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium" data-key="nav_about">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium" data-key="nav_contact">Contact</a>
+                    </div>
+                    <button onclick="toggleLanguage()" class="flex items-center px-3 py-1 border rounded-md hover:bg-gray-100 transition">
+                        <span class="text-sm font-bold" id="lang-btn-text">عربي</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <img src="maabilah cars photo.png" alt="Maabilah Cars Showroom" style="max-height: 500px; object-fit: cover;">
-      <h1>أفضل عروض السيارات المستعملة</h1>
-      <p>فحص معتمد | أسعار عادلة | معرض موثوق في المعبيلة</p>
-      <div class="hero-actions">
-        <button class="btn btn-primary">تصفح السيارات</button>
-        <button class="btn btn-primary" style="background:white;color:var(--primary);border:2px solid var(--primary)">تواصل الآن</button>
-      </div>
-      <div style="text-align:center;margin-top:2rem;color:#7f8c8d">
-        <p>✓ فحص معتمد قبل كل بيع</p>
-        <p>✓ سيارات خليجية ووارد</p>
-        <p>✓ معرض في صناعية المعبيلة</p>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-16">
+        <div class="max-w-4xl mx-auto text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-key="hero_title">Find Your Dream Car in Al Maabilah</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200" data-key="hero_subtitle">The premium destination for Gulf specs and imported vehicles in Muscat.</p>
+            <div class="bg-white p-4 rounded-lg shadow-lg max-w-3xl mx-auto flex flex-col md:flex-row gap-4">
+                <select class="p-3 border rounded text-gray-600 flex-1">
+                    <option data-key="select_make">Select Make</option>
+                    <option>Toyota</option>
+                    <option>Lexus</option>
+                    <option>Nissan</option>
+                </select>
+                <select class="p-3 border rounded text-gray-600 flex-1">
+                    <option data-key="select_model">Select Model</option>
+                </select>
+                <button class="bg-blue-600 text-white px-8 py-3 rounded font-bold hover:bg-blue-700 transition" data-key="btn_search">Search</button>
+            </div>
+        </div>
+    </section>
 
-  <section id="listings" class="section">
-    <h2 class="section-title">أحدث السيارات المتاحة</h2>
-    <p class="section-subtitle">انتقينا لك أفضل السيارات مع فحص شامل وضمان الجودة</p>
-    <div class="listings-grid">
-      <div class="car-card">
-        <div class="car-image">
-          <span class="car-badge">جديد</span>🚙
+    <!-- Featured Listings -->
+    <section id="listings" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="featured_title">Featured Opportunities</h2>
+            <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
-        <div class="car-info">
-          <h3 class="car-title">تويوتا كامري 2018</h3>
-          <div class="car-price">5,800 ر.ع</div>
-          <div class="car-specs">
-            <span class="car-spec">2018</span>
-            <span class="car-spec">120K كم</span>
-            <span class="car-spec">خليجي</span>
-          </div>
-          <div class="car-actions">
-            <button class="btn-call">اتصال</button>
-            <button class="btn-whatsapp">واتساب</button>
-          </div>
-        </div>
-      </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Car Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" alt="Lexus LX" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Gulf Specs</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Lexus LX 570</h3>
+                        <span class="text-blue-600 font-bold text-lg">34,000 OMR</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">2021 • 45,000 KM • Automatic</p>
+                    <hr class="border-gray-100 mb-4">
+                    <button class="w-full text-blue-600 font-semibold hover:text-blue-800 transition" data-key="btn_details">View Details</button>
+                </div>
+            </div>
 
-      <div class="car-card">
-        <div class="car-image">
-          <span class="car-badge">مميز</span>🚙
-        </div>
-        <div class="car-info">
-          <h3 class="car-title">نيسان باترول 2020</h3>
-          <div class="car-price">13,500 ر.ع</div>
-          <div class="car-specs">
-            <span class="car-spec">2020</span>
-            <span class="car-spec">65K كم</span>
-            <span class="car-spec">خليجي</span>
-          </div>
-          <div class="car-actions">
-            <button class="btn-call">اتصال</button>
-            <button class="btn-whatsapp">واتساب</button>
-          </div>
-        </div>
-      </div>
+            <!-- Car Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1621007947382-bb3c3968e3bb?auto=format&fit=crop&w=800&q=80" alt="Toyota Camry" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Clean Title</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Toyota Camry SE</h3>
+                        <span class="text-blue-600 font-bold text-lg">6,200 OMR</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">2020 • 62,000 KM • Import (Wared)</p>
+                    <hr class="border-gray-100 mb-4">
+                    <button class="w-full text-blue-600 font-semibold hover:text-blue-800 transition" data-key="btn_details">View Details</button>
+                </div>
+            </div>
 
-      <div class="car-card">
-        <div class="car-image">
-          <span class="car-badge">فرصة</span>🚙
+            <!-- Car Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Nissan Patrol" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Warranty</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold">Nissan Patrol Platinum</h3>
+                        <span class="text-blue-600 font-bold text-lg">18,500 OMR</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">2019 • 85,000 KM • V8</p>
+                    <hr class="border-gray-100 mb-4">
+                    <button class="w-full text-blue-600 font-semibold hover:text-blue-800 transition" data-key="btn_details">View Details</button>
+                </div>
+            </div>
         </div>
-        <div class="car-info">
-          <h3 class="car-title">هيونداي إيلنترا 2019</h3>
-          <div class="car-price">4,200 ر.ع</div>
-          <div class="car-specs">
-            <span class="car-spec">2019</span>
-            <span class="car-spec">90K كم</span>
-            <span class="car-spec">وارد</span>
-          </div>
-          <div class="car-actions">
-            <button class="btn-call">اتصال</button>
-            <button class="btn-whatsapp">واتساب</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="features" class="features">
-    <div class="section">
-      <h2 class="section-title">لماذا تختار Maabilah Cars</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">🛡️</div>
-          <h3 class="feature-title">فحص معتمد</h3>
-          <p class="feature-text">فحص شامل للهيكل والمحرك والجير قبل كل بيع</p>
+    <!-- Why Choose Us -->
+    <section id="about" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2" data-key="feat_1_title">Certified Inspection</h3>
+                    <p class="text-gray-600" data-key="feat_1_desc">Every car passes a comprehensive check before listing.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-2" data-key="feat_2_title">Fair Pricing</h3>
+                    <p class="text-gray-600" data-key="feat_2_desc">Competitive market rates for buyers and sellers.</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h3 class="text-xl font-bold mb-2" data-key="feat_3_title">Prime Location</h3>
+                    <p class="text-gray-600" data-key="feat_3_desc">Located in the heart of Al Maabilah Industrial Area.</p>
+                </div>
+            </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">📄</div>
-          <h3 class="feature-title">تخليص
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <span class="text-2xl font-bold text-white block mb-4">Maabilah<span class="text-blue-500">Cars</span></span>
+                <p class="mb-4" data-key="footer_desc">The #1 digital marketplace for buying and selling cars in Oman's automotive hub.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4" data-key="footer_links">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="#listings" class="hover:text-blue-400">Listings</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4" data-key="footer_contact">Contact</h4>
+                <ul class="space-y-2">
+                    <li>📞 +968 9000 0000</li>
+                    <li>📧 info@maabilahcars.com</li>
+                    <li>📍 Al Maabilah South, Seeb</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+            &copy; 2025 Maabilah Cars. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Translation Script -->
+    <script>
+        const translations = {
+            en: {
+                nav_home: "Home", nav_cars: "Cars", nav_about: "About", nav_contact: "Contact",
+                hero_title: "Find Your Dream Car in Al Maabilah",
+                hero_subtitle: "The premium destination for Gulf specs and imported vehicles in Muscat.",
+                select_make: "Select Make", select_model: "Select Model", btn_search: "Search",
+                featured_title: "Featured Opportunities", btn_details: "View Details",
+                feat_1_title: "Certified Inspection", feat_1_desc: "Every car passes a comprehensive check before listing.",
+                feat_2_title: "Fair Pricing", feat_2_desc: "Competitive market rates for buyers and sellers.",
+                feat_3_title: "Prime Location", feat_3_desc: "Located in the heart of Al Maabilah Industrial Area.",
+                footer_desc: "The #1 digital marketplace for buying and selling cars in Oman's automotive hub.",
+                footer_links: "Quick Links", footer_contact: "Contact"
+            },
+            ar: {
+                nav_home: "الرئيسية", nav_cars: "السيارات", nav_about: "من نحن", nav_contact: "تواصل معنا",
+                hero_title: "سيارتك المثالية تنتظرك في المعبيلة",
+                hero_subtitle: "الوجهة الأولى للسيارات الخليجية والوارد في مسقط.",
+                select_make: "اختر الماركة", select_model: "اختر الموديل", btn_search: "بحث",
+                featured_title: "عروض مميزة وحصرية", btn_details: "التفاصيل",
+                feat_1_title: "فحص معتمد", feat_1_desc: "فحص شامل للجير والماكينة والشاصي قبل العرض.",
+                feat_2_title: "أسعار تنافسية", feat_2_desc: "نضمن لك أفضل سعر سوق للبائع والمشتري.",
+                feat_3_title: "موقع استراتيجي", feat_3_desc: "موقعنا في قلب صناعية المعبيلة لخدمتك.",
+                footer_desc: "المنصة الرقمية الأولى لبيع وشراء السيارات في سوق السيارات العماني.",
+                footer_links: "روابط سريعة", footer_contact: "اتصل بنا"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const html = document.documentElement;
+            const btnText = document.getElementById('lang-btn-text');
+            const elements = document.querySelectorAll('[data-key]');
+            const navLinks = document.getElementById('nav-links');
+
+            if (currentLang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                document.body.classList.add('font-arabic');
+                btnText.textContent = 'English';
+                navLinks.classList.add('space-x-reverse');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                document.body.classList.remove('font-arabic');
+                btnText.textContent = 'عربي';
+                navLinks.classList.remove('space-x-reverse');
+            }
+
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
