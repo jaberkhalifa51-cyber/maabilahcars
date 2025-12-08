@@ -80,24 +80,47 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-16">
-        <div class="max-w-4xl mx-auto text-white">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-key="hero_title">Find Your Dream Car in Al Maabilah</h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-200" data-key="hero_subtitle">The premium destination for Gulf specs and imported vehicles in Muscat.</p>
-            <div class="bg-white p-4 rounded-lg shadow-lg max-w-3xl mx-auto flex flex-col md:flex-row gap-4">
-                <select class="p-3 border rounded text-gray-600 flex-1">
-                    <option data-key="select_make">Select Make</option>
-                    <option>Toyota</option>
-                    <option>Lexus</option>
-                    <option>Nissan</option>
-                </select>
-                <select class="p-3 border rounded text-gray-600 flex-1">
-                    <option data-key="select_model">Select Model</option>
-                </select>
-                <button class="bg-blue-600 text-white px-8 py-3 rounded font-bold hover:bg-blue-700 transition" data-key="btn_search">Search</button>
-            </div>
+    <!-- 1. هذا القسم للصورة فقط (فارغ ونظيف) -->
+<section id="home" class="hero-bg h-screen relative">
+    <!-- لا نضع أي شيء هنا لتظهر الصورة كاملة -->
+</section>
+
+<!-- 2. هذا قسم جديد للكلام والبحث (يظهر تحت الصورة) -->
+<section class="bg-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+        
+        <!-- العنوان -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-800" data-key="hero_title">
+            Find Your Dream Car in Al Maabilah
+        </h1>
+        
+        <!-- الوصف -->
+        <p class="text-xl md:text-2xl mb-8 text-gray-600" data-key="hero_subtitle">
+            The premium destination for Gulf specs and imported vehicles in Muscat.
+        </p>
+
+        <!-- صندوق البحث -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto flex flex-col md:flex-row gap-4">
+            
+            <select class="p-3 border rounded text-gray-600 flex-1">
+                <option data-key="select_make">Select Make</option>
+                <option>Toyota</option>
+                <option>Lexus</option>
+                <option>Nissan</option>
+            </select>
+            
+            <select class="p-3 border rounded text-gray-600 flex-1">
+                <option data-key="select_model">Select Model</option>
+            </select>
+
+            <button class="bg-blue-600 text-white px-8 py-3 rounded font-bold hover:bg-blue-700 transition" data-key="btn_search">
+                Search
+            </button>
         </div>
-    </section>
+
+    </div>
+</section>
+
 
     <!-- Featured Listings -->
     <section id="listings" class="py-20 max-w-7xl mx-auto px-4">
